@@ -1,14 +1,9 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
-    }
-  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/index.py": {
-      "maxDuration": 300
+      "maxDuration": 300,
+      "excludeFiles": "{README.md,academic_pipeline.py,build_index.py,evaluate.py,requirements-academic.txt,data/corpus.csv,data/evaluation_queries.csv,data/full.index}"
     }
-  },
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+  }
 }
