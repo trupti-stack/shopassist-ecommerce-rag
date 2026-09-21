@@ -1,0 +1,1282 @@
+[
+  {
+    "id": 1,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "Where is my order?",
+    "answer": "Use your order tracking page or open the tracking link sent after dispatch. Enter your order ID to see the latest shipment status.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 2,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "How can I track my package?",
+    "answer": "Use the shipment tracking link from your dispatch message. Your order ID or tracking number is the key information needed to locate the package.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 3,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "Can I check where my parcel is?",
+    "answer": "Yes. Open the tracking link associated with the order and check the latest carrier scan. Keep your order ID ready if support assistance is needed.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 4,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "I want to know the current location of my order.",
+    "answer": "The latest location is available through the shipment tracking page after dispatch. Search using the order ID or tracking number.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 5,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "Where can I see my shipment status?",
+    "answer": "You can see shipment status in the order tracking section. The order ID identifies the correct shipment.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 6,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "How do I find my delivery tracking information?",
+    "answer": "Open the tracking link provided after the order was dispatched. The order ID or tracking number can be used to identify the shipment.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 7,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "My parcel is on the way. How do I follow it?",
+    "answer": "Track the parcel using the carrier tracking link in your dispatch notification. Use the order ID when contacting support.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 8,
+    "category": "Order Tracking",
+    "intent": "track_order",
+    "title": "Track Order",
+    "text": "Is there a way to check my order online?",
+    "answer": "Yes. Open your orders section and select the order to view its current status and tracking details.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 9,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "My order is delayed.",
+    "answer": "Check the latest carrier update first. If the promised delivery date has passed, contact support with the order ID so the shipment can be investigated.",
+    "important_information": "order_id, promised_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 10,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "Why has my package not arrived yet?",
+    "answer": "A delivery can be delayed because of carrier processing, weather, or operational issues. Check tracking and provide the order ID if the promised date has passed.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 11,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "My delivery is late. What should I do?",
+    "answer": "Review the shipment status and expected delivery date. If the date has passed, support can investigate the shipment using the order ID.",
+    "important_information": "order_id, expected_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 12,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "The delivery date has passed.",
+    "answer": "When the promised date has passed, check the latest tracking event and contact support with your order ID for further investigation.",
+    "important_information": "order_id, promised_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 13,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "My parcel is stuck in transit.",
+    "answer": "A shipment may remain at one carrier facility for some time. Check the tracking event and contact support with the order ID if there is no movement after the expected date.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 14,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "Why is my delivery taking so long?",
+    "answer": "The shipment may be delayed by carrier or operational issues. Track the order and share the order ID if the delay continues.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 15,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "The courier has not delivered my order yet.",
+    "answer": "Check the latest tracking scan. If delivery is overdue, provide the order ID to support for investigation.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 16,
+    "category": "Order Tracking",
+    "intent": "delayed_order",
+    "title": "Delayed Order",
+    "text": "My package should have arrived yesterday.",
+    "answer": "Check the current tracking status first. If the promised date was yesterday and delivery has not occurred, support can investigate using the order ID.",
+    "important_information": "order_id, promised_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 17,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "When will my order arrive?",
+    "answer": "The estimated delivery date is shown in the order details and tracking page. Delivery estimates can change after dispatch.",
+    "important_information": "order_id, delivery_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 18,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "What is the expected delivery date?",
+    "answer": "Open the order details to view the current estimated delivery date. The tracking page provides the latest carrier update.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 19,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "How long will delivery take?",
+    "answer": "Delivery time depends on the shipping method and destination. The order page shows the current expected delivery date.",
+    "important_information": "order_id, destination",
+    "chunk_no": 1
+  },
+  {
+    "id": 20,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "When can I expect my parcel?",
+    "answer": "Check the estimated delivery date in the order details or tracking page. The date may update after dispatch.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 21,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "Can you tell me the delivery ETA?",
+    "answer": "The latest delivery estimate is available in the tracking details. Use the order ID to locate the shipment.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 22,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "How many days until my package arrives?",
+    "answer": "The delivery estimate depends on destination and shipping method. Check your order page for the current expected date.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 23,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "Is my order arriving today?",
+    "answer": "The latest carrier tracking event and delivery estimate indicate whether the parcel is scheduled for delivery today.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 24,
+    "category": "Order Tracking",
+    "intent": "delivery_estimate",
+    "title": "Delivery Estimate",
+    "text": "When should I expect delivery?",
+    "answer": "The order details show the current delivery estimate. Tracking becomes more precise after the shipment is dispatched.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 25,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "My order says delivered but I did not get it.",
+    "answer": "Check nearby delivery locations, household members, and the carrier proof of delivery. If the package is still missing, contact support with the order ID.",
+    "important_information": "order_id, delivery_status",
+    "chunk_no": 1
+  },
+  {
+    "id": 26,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "The tracking says delivered but my parcel is missing.",
+    "answer": "First check the delivery location and nearby safe places. If it is still missing, report the issue with your order ID.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 27,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "Courier marked my package delivered but I have nothing.",
+    "answer": "Verify the delivery address and nearby locations, then contact support with the order ID if the parcel cannot be found.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 28,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "It shows delivered, where is my package?",
+    "answer": "Review the carrier delivery details and check with others at the address. If unresolved, provide the order ID to support.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 29,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "I never received an order that says delivered.",
+    "answer": "Check whether someone else accepted it and review the carrier proof of delivery. Escalate with the order ID if it remains missing.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 30,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "My parcel is marked delivered incorrectly.",
+    "answer": "Check the delivery scan and nearby safe locations. If the parcel is not found, report it using the order ID.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 31,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "The app says delivered but no package is here.",
+    "answer": "Check with household members and the delivery location. If the package remains missing, contact support with the order ID.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 32,
+    "category": "Order Tracking",
+    "intent": "delivered_not_received",
+    "title": "Delivered Not Received",
+    "text": "Delivered status but package not received.",
+    "answer": "Please check the delivery location and carrier details. Support can investigate the shipment when you provide the order ID.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 33,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "I want to return my product.",
+    "answer": "Start a return from the order details, select the item, choose a return reason, and follow the pickup or drop-off instructions.",
+    "important_information": "order_id, return_reason",
+    "chunk_no": 1
+  },
+  {
+    "id": 34,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "How can I return an item?",
+    "answer": "Open the order, select the item to return, choose the return reason, and submit the return request.",
+    "important_information": "order_id, return_reason",
+    "chunk_no": 1
+  },
+  {
+    "id": 35,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "I need to send my product back.",
+    "answer": "Use the return option in your order details. The system will guide you through the return request and pickup or drop-off process.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 36,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "Can I return what I purchased?",
+    "answer": "Check the item's return eligibility in the order details and submit a return request when eligible.",
+    "important_information": "order_id, return_reason",
+    "chunk_no": 1
+  },
+  {
+    "id": 37,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "Where do I start a return?",
+    "answer": "Go to your orders, select the relevant item, and choose the return option. Provide the return reason when requested.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 38,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "I changed my mind and want to return the item.",
+    "answer": "Open the order and request a return if the item is within the applicable return period and conditions.",
+    "important_information": "order_id, return_reason",
+    "chunk_no": 1
+  },
+  {
+    "id": 39,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "Please help me return my purchase.",
+    "answer": "Select the item in your orders and choose return. Follow the displayed instructions for pickup or drop-off.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 40,
+    "category": "Returns",
+    "intent": "return_request",
+    "title": "Return Request",
+    "text": "How do I send an item back to the seller?",
+    "answer": "Create a return request from the order page. The approved return instructions will show the next steps.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 41,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "Is my product eligible for return?",
+    "answer": "Return eligibility depends on the item, return window, and condition. Check the return policy shown on the order page.",
+    "important_information": "order_id, purchase_date, item_condition",
+    "chunk_no": 1
+  },
+  {
+    "id": 42,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "Can I return this item after using it?",
+    "answer": "Eligibility depends on the item category and condition. Review the item-specific return terms before submitting a request.",
+    "important_information": "order_id, item_condition",
+    "chunk_no": 1
+  },
+  {
+    "id": 43,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "What is the return window?",
+    "answer": "The applicable return period is shown with the order or product return policy. Check the purchase date against that window.",
+    "important_information": "order_id, purchase_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 44,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "How many days do I have to return a product?",
+    "answer": "The return period varies by item and policy. Check the return terms attached to the order.",
+    "important_information": "order_id, purchase_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 45,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "Will you accept a damaged item for return?",
+    "answer": "Report damage through the return process and select the appropriate reason. Eligibility is assessed using the item condition and policy.",
+    "important_information": "order_id, item_condition",
+    "chunk_no": 1
+  },
+  {
+    "id": 46,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "Can I return an opened product?",
+    "answer": "Some items can be returned after opening while others have condition restrictions. Check the item-specific policy before requesting the return.",
+    "important_information": "order_id, item_condition",
+    "chunk_no": 1
+  },
+  {
+    "id": 47,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "My return period may be over. Can I still return it?",
+    "answer": "Check the purchase date and item-specific return window. Support can review exceptional cases when you provide the order ID.",
+    "important_information": "order_id, purchase_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 48,
+    "category": "Returns",
+    "intent": "return_eligibility",
+    "title": "Return Eligibility",
+    "text": "Does every product have the same return policy?",
+    "answer": "No. Return conditions can vary by product type. Review the return policy linked to the specific order.",
+    "important_information": "order_id, item_type",
+    "chunk_no": 1
+  },
+  {
+    "id": 49,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "I received the wrong size and want an exchange.",
+    "answer": "Open the order, select the item, and choose the exchange option if available. Select the required size and follow the instructions.",
+    "important_information": "order_id, size",
+    "chunk_no": 1
+  },
+  {
+    "id": 50,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "Can I exchange my product?",
+    "answer": "Exchange availability depends on the item and stock. Check the order page for an exchange option.",
+    "important_information": "order_id, item_condition",
+    "chunk_no": 1
+  },
+  {
+    "id": 51,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "I want a different size.",
+    "answer": "Request an exchange from the order details when the item is eligible and the desired size is in stock.",
+    "important_information": "order_id, size",
+    "chunk_no": 1
+  },
+  {
+    "id": 52,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "The product does not fit. Can I replace it?",
+    "answer": "If the item supports exchanges, select exchange in your order and choose the required size or variant.",
+    "important_information": "order_id, size",
+    "chunk_no": 1
+  },
+  {
+    "id": 53,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "Can I change the color of the item?",
+    "answer": "Color exchange depends on inventory and item policy. Open the order and check available exchange options.",
+    "important_information": "order_id, color",
+    "chunk_no": 1
+  },
+  {
+    "id": 54,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "I need the same product in another size.",
+    "answer": "Use the exchange option in your order, provided the item is eligible and the new size is available.",
+    "important_information": "order_id, size",
+    "chunk_no": 1
+  },
+  {
+    "id": 55,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "How do I exchange an item for another variant?",
+    "answer": "Open the order, choose exchange, and select the available variant. Follow the return and replacement instructions.",
+    "important_information": "order_id, variant",
+    "chunk_no": 1
+  },
+  {
+    "id": 56,
+    "category": "Returns",
+    "intent": "exchange_request",
+    "title": "Exchange Request",
+    "text": "Can I swap my item instead of getting a refund?",
+    "answer": "If exchange is supported for the item, you can choose an exchange instead of a standard return.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 57,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "When will my return be picked up?",
+    "answer": "The pickup date is shown after the return is approved and scheduled. Keep the item packed according to the return instructions.",
+    "important_information": "order_id, pickup_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 58,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "How do I schedule a return pickup?",
+    "answer": "Submit the return request first. If pickup is supported, the system will display available pickup scheduling options.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 59,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "The return pickup has not happened.",
+    "answer": "Check the scheduled pickup date and latest return status. If the date has passed, contact support with the return or order ID.",
+    "important_information": "order_id, pickup_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 60,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "Can I choose a different pickup date?",
+    "answer": "Pickup-date changes depend on the available carrier slots. Use the return tracking or rescheduling option when provided.",
+    "important_information": "order_id, pickup_date",
+    "chunk_no": 1
+  },
+  {
+    "id": 61,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "Where can I see my return pickup status?",
+    "answer": "Open the return details in your orders section to view the scheduled pickup and latest carrier status.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 62,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "The courier did not come for my return.",
+    "answer": "Check the scheduled pickup information. If the pickup was missed, use the rescheduling option or contact support with the order ID.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 63,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "Do I need to package the item before pickup?",
+    "answer": "Pack the item according to the return instructions and keep accessories or documents required by the item policy.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 64,
+    "category": "Returns",
+    "intent": "return_pickup",
+    "title": "Return Pickup",
+    "text": "Can someone else hand over my return?",
+    "answer": "Pickup handover depends on carrier and seller requirements. Keep the return package ready with the required order details.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 65,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "My payment was unsuccessful.",
+    "answer": "Try the payment again using the same or another available payment method. If money was debited, do not retry repeatedly; check the payment status first.",
+    "important_information": "payment_method, amount, transaction_status",
+    "chunk_no": 1
+  },
+  {
+    "id": 66,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "Why did my payment fail?",
+    "answer": "A payment can fail because of bank rejection, insufficient balance, card restrictions, or a temporary payment gateway issue. Check the transaction status.",
+    "important_information": "payment_method, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 67,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "I cannot complete the payment.",
+    "answer": "Check your payment method, available balance, card or UPI status, and try again once. For a debited amount, verify the transaction status first.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 68,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "Checkout payment is failing.",
+    "answer": "Verify the selected payment method and try again. If the amount was deducted despite failure, check the payment status before another attempt.",
+    "important_information": "payment_method, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 69,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "My card payment did not go through.",
+    "answer": "Check card validity, limits, and bank approval. You can also try another supported method.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 70,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "UPI payment failed at checkout.",
+    "answer": "Verify that your UPI app and bank account are active, then retry once. If funds were debited, check the transaction status.",
+    "important_information": "payment_method, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 71,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "The payment gateway rejected my transaction.",
+    "answer": "The bank or payment gateway may have declined the transaction. Verify the payment method and retry or choose another method.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 72,
+    "category": "Payment Issues",
+    "intent": "payment_failed",
+    "title": "Payment Failed",
+    "text": "I got a payment failure message.",
+    "answer": "Review the payment status and retry once if no amount was debited. For a debit without order confirmation, check the payment status first.",
+    "important_information": "transaction_status",
+    "chunk_no": 1
+  },
+  {
+    "id": 73,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "My payment is still pending.",
+    "answer": "Wait for the payment status to update and avoid making repeated payments for the same order. If it remains pending, contact support with the transaction details.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 74,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "The payment status says pending.",
+    "answer": "A pending status means the transaction has not received a final success or failure confirmation. Wait for the status to update before retrying.",
+    "important_information": "transaction_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 75,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "Why is my payment stuck on pending?",
+    "answer": "The bank or payment gateway may still be processing the transaction. Avoid duplicate payments and monitor the transaction status.",
+    "important_information": "transaction_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 76,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "My UPI payment is pending.",
+    "answer": "Keep the transaction details and wait for the bank status to update. Do not make duplicate payments while the original transaction is pending.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 77,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "Card payment is showing pending.",
+    "answer": "The payment is awaiting final confirmation from the payment provider. Monitor the status and avoid duplicate attempts.",
+    "important_information": "transaction_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 78,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "The money transfer for my order is pending.",
+    "answer": "The payment provider has not returned a final result yet. Check the transaction status before taking another payment action.",
+    "important_information": "transaction_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 79,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "It has been a while and payment is still pending.",
+    "answer": "Check the transaction status and keep the payment reference. Support can investigate a long-pending transaction.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 80,
+    "category": "Payment Issues",
+    "intent": "payment_pending",
+    "title": "Payment Pending",
+    "text": "Should I retry a pending payment?",
+    "answer": "Do not immediately retry a pending transaction because the original payment may still complete. Verify the current status first.",
+    "important_information": "transaction_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 81,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "My money was deducted but the order was not placed.",
+    "answer": "Do not pay again immediately. Check the payment transaction status and contact support with the transaction ID and amount if the order was not created.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 82,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "Payment succeeded but I did not receive an order number.",
+    "answer": "Keep the payment reference and amount. Check your orders section; if no order appears, contact support for transaction verification.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 83,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "I was charged but checkout failed.",
+    "answer": "Check whether the transaction is successful or pending before retrying. Support can trace a debited payment using the transaction ID.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 84,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "The money was taken from my account but no order exists.",
+    "answer": "Please do not make a duplicate payment. Verify the payment status and provide the transaction ID to support.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 85,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "Payment got deducted and the order failed.",
+    "answer": "Check the payment transaction first. If the debit is confirmed but no order exists, support can investigate or process the applicable refund.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 86,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "I received a debit alert but no order confirmation.",
+    "answer": "Use the payment reference to verify the transaction. Avoid duplicate payment until the status is clear.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 87,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "My bank account was charged but the order is missing.",
+    "answer": "Check your payment status and orders page. If there is no order, contact support with the transaction ID and amount.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 88,
+    "category": "Payment Issues",
+    "intent": "charged_order_failed",
+    "title": "Charged Order Failed",
+    "text": "The checkout crashed after payment.",
+    "answer": "Verify whether the payment completed before trying again. If charged without an order, share the transaction reference with support.",
+    "important_information": "transaction_id, amount",
+    "chunk_no": 1
+  },
+  {
+    "id": 89,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Which payment methods can I use?",
+    "answer": "Available methods are shown at checkout and can include supported cards, UPI, net banking, wallets, or other enabled options.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 90,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Can I pay by UPI?",
+    "answer": "UPI is available when shown among the payment methods at checkout.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 91,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Do you accept credit cards?",
+    "answer": "Supported credit and debit card options are listed during checkout. Enter the card details only on the secure payment page.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 92,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Can I use net banking?",
+    "answer": "Net banking can be used when it is available as an option at checkout.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 93,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "What payment options are available?",
+    "answer": "Open the checkout page to view the payment methods currently available for your order and location.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 94,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Is cash on delivery available?",
+    "answer": "Cash-on-delivery availability depends on the product, seller, and delivery location. Check the option shown at checkout.",
+    "important_information": "payment_method, destination",
+    "chunk_no": 1
+  },
+  {
+    "id": 95,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Can I pay with a wallet?",
+    "answer": "Wallet payment is available only when the supported wallet appears in the checkout payment options.",
+    "important_information": "payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 96,
+    "category": "Payment Issues",
+    "intent": "payment_methods",
+    "title": "Payment Methods",
+    "text": "Why is my preferred payment method not showing?",
+    "answer": "Payment options can vary by product, seller, order value, and location. Check the methods currently displayed at checkout.",
+    "important_information": "payment_method, destination",
+    "chunk_no": 1
+  },
+  {
+    "id": 97,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "Where will I get my refund back?",
+    "answer": "The refund is normally sent through the original payment channel when supported. Check the refund details in your order or payment history.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 98,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "How will I receive my refund?",
+    "answer": "Refunds are generally processed to the original payment method or the method specified in the refund details.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 99,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "Where does my refund go?",
+    "answer": "The refund destination depends on the original payment method and applicable refund rules. Check the order's refund details.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 100,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "Will my refund come to my bank account?",
+    "answer": "For eligible bank-based payments, refunds are typically returned through the original payment route. Check the refund status for the exact method.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 101,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "How can I check where my refund was sent?",
+    "answer": "Open the refund details associated with the order to see the refund method and processing status.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 102,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "I need to know the refund method.",
+    "answer": "The refund method is shown in the refund details for the order and may depend on the original payment method.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 103,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "My returned order was refunded. Where is the money?",
+    "answer": "Check the refund status and destination shown in the order details. The time to appear depends on the payment provider.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 104,
+    "category": "Refunds",
+    "intent": "refund_status",
+    "title": "Refund Status",
+    "text": "Where will the refund amount be credited?",
+    "answer": "The refund is generally credited through the applicable original payment route. Review the refund details for the order.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 105,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "My refund is pending.",
+    "answer": "A pending refund means processing has started but the amount has not completed through the payment provider. Check the refund status and reference.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 106,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "Why is my refund taking time?",
+    "answer": "Refund processing can take time after the return or cancellation is approved. Check the refund status for the latest update.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 107,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "The refund has been initiated but is not complete.",
+    "answer": "Keep the refund reference and monitor the status. If the stated processing window has passed, contact support.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 108,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "Refund status shows processing.",
+    "answer": "Processing means the refund is moving through the payment provider. Wait for completion and keep the refund reference.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 109,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "How long does a refund take to process?",
+    "answer": "The processing time depends on the payment method and provider. The refund status page shows the current stage.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 110,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "My refund has not finished yet.",
+    "answer": "Check the current refund status and reference. Support can investigate when the applicable processing window has passed.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 111,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "Why is my refund still under processing?",
+    "answer": "The payment provider may still be processing the refund. Monitor the status and contact support after the expected window.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 112,
+    "category": "Refunds",
+    "intent": "refund_pending",
+    "title": "Refund Pending",
+    "text": "Can you check my pending refund?",
+    "answer": "Support can investigate a pending refund using the order ID or refund reference.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 113,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "I have not received my refund.",
+    "answer": "Check the refund status and expected completion window. If it has passed, contact support with the order ID and refund reference.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 114,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "My refund says completed but I cannot see the money.",
+    "answer": "Verify the payment account or statement linked to the original payment method. If the amount is still missing, contact support with the refund reference.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 115,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "The refund was processed but money is missing.",
+    "answer": "Check the original payment account and transaction history. If the credit is not visible after the expected window, provide the refund reference to support.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 116,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "I was told my refund was issued, but I got nothing.",
+    "answer": "Review the refund confirmation and destination. If the credit is absent after the expected processing period, support can trace it.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 117,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "My refund has not reached my account.",
+    "answer": "Check the refund destination and bank or payment statement. Share the order ID and refund reference if it remains missing.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 118,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "Refund completed but not credited.",
+    "answer": "Confirm the original payment account and check the refund reference. Support can investigate a missing credit after the expected window.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 119,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "Why is my completed refund not showing?",
+    "answer": "A provider may take additional time to reflect a completed refund. Check the original payment statement and share the refund reference if needed.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 120,
+    "category": "Refunds",
+    "intent": "refund_not_received",
+    "title": "Refund Not Received",
+    "text": "The app says refunded but my balance has not changed.",
+    "answer": "Review the original payment account and refund transaction. If the credit is missing beyond the expected time, contact support.",
+    "important_information": "order_id, refund_reference",
+    "chunk_no": 1
+  },
+  {
+    "id": 121,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "When will I get my refund?",
+    "answer": "The refund timeline depends on the payment method and provider. Check the refund status in the order details for the current stage.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 122,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "How many days for a refund?",
+    "answer": "Refund timing varies by payment method. The order's refund details provide the expected processing window.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 123,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "What is the refund ETA?",
+    "answer": "The current refund status and expected processing information are shown in the refund details.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 124,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "How long after return will I get my money?",
+    "answer": "After the return is approved and refund processing begins, the payment provider may take additional time to credit the amount.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  },
+  {
+    "id": 125,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "When should the refund reach me?",
+    "answer": "Check the refund status and payment method because provider processing times can differ.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 126,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "How soon will the refund appear?",
+    "answer": "The refund appears according to the processing timeline of the original payment method. Check the refund details for the expected window.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 127,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "Can you tell me the refund processing time?",
+    "answer": "Refund timing depends on the payment provider and payment method. Use the refund status for the current estimate.",
+    "important_information": "order_id, payment_method",
+    "chunk_no": 1
+  },
+  {
+    "id": 128,
+    "category": "Refunds",
+    "intent": "refund_timeline",
+    "title": "Refund Timeline",
+    "text": "Will I receive the refund immediately after return?",
+    "answer": "Not necessarily. The return may need approval first, followed by payment-provider processing.",
+    "important_information": "order_id",
+    "chunk_no": 1
+  }
+]

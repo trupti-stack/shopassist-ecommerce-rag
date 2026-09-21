@@ -1,0 +1,6 @@
+{
+  "Order Tracking": "Questions about order location, shipment tracking, delivery delay, expected delivery date, delivered status, or a missing delivered package.",
+  "Returns": "Questions about returning a product, return eligibility, exchange, replacement, return pickup, return scheduling, or sending an item back.",
+  "Payment Issues": "Questions about failed payments, pending payments, money deducted without an order, payment methods, cards, UPI, net banking, wallets, or cash on delivery.",
+  "Refunds": "Questions about refund destination, refund status, pending refund, refund not received, refund completion, and refund processing timeline."
+}

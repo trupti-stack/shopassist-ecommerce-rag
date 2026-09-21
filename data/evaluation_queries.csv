@@ -1,0 +1,129 @@
+query_id,query,expected_category,expected_intent
+1,Where's my parcel?,Order Tracking,track_order
+2,How can I see my order location?,Order Tracking,track_order
+3,Track my package please.,Order Tracking,track_order
+4,I want the latest status of my shipment.,Order Tracking,track_order
+5,Can I follow my delivery?,Order Tracking,track_order
+6,Where is my package right now?,Order Tracking,track_order
+7,Show me my order tracking information.,Order Tracking,track_order
+8,How do I know where my order is?,Order Tracking,track_order
+9,My package is late.,Order Tracking,delayed_order
+10,Why is my order delayed?,Order Tracking,delayed_order
+11,The courier missed the promised date.,Order Tracking,delayed_order
+12,My delivery is overdue.,Order Tracking,delayed_order
+13,The parcel has not moved.,Order Tracking,delayed_order
+14,What can I do about a late shipment?,Order Tracking,delayed_order
+15,My order was supposed to arrive already.,Order Tracking,delayed_order
+16,The delivery is taking longer than expected.,Order Tracking,delayed_order
+17,What date will my package arrive?,Order Tracking,delivery_estimate
+18,Give me my delivery estimate.,Order Tracking,delivery_estimate
+19,When should the parcel reach me?,Order Tracking,delivery_estimate
+20,How long before my order arrives?,Order Tracking,delivery_estimate
+21,Can I know the expected delivery date?,Order Tracking,delivery_estimate
+22,Is the shipment arriving today?,Order Tracking,delivery_estimate
+23,What is my order ETA?,Order Tracking,delivery_estimate
+24,Tell me when my package should arrive.,Order Tracking,delivery_estimate
+25,Tracking says delivered but I don't have it.,Order Tracking,delivered_not_received
+26,My parcel shows delivered and is missing.,Order Tracking,delivered_not_received
+27,"The courier says delivered, but where is my order?",Order Tracking,delivered_not_received
+28,I did not receive the package marked delivered.,Order Tracking,delivered_not_received
+29,Delivered status is wrong.,Order Tracking,delivered_not_received
+30,The delivery was marked complete but nothing arrived.,Order Tracking,delivered_not_received
+31,My order says delivered but nobody here got it.,Order Tracking,delivered_not_received
+32,Where is the parcel that was supposedly delivered?,Order Tracking,delivered_not_received
+33,I need to return something.,Returns,return_request
+34,How do I send my purchase back?,Returns,return_request
+35,Start a return for my order.,Returns,return_request
+36,"I don't want this product anymore, can I return it?",Returns,return_request
+37,Please help me return an item.,Returns,return_request
+38,What is the process for returning a product?,Returns,return_request
+39,I want my item picked up for return.,Returns,return_request
+40,I need to send this product back.,Returns,return_request
+41,Can this item be returned?,Returns,return_eligibility
+42,Am I still within the return period?,Returns,return_eligibility
+43,Is an opened item returnable?,Returns,return_eligibility
+44,Can I return a used product?,Returns,return_eligibility
+45,What are the return eligibility rules?,Returns,return_eligibility
+46,How many days do I have to return this?,Returns,return_eligibility
+47,Will you accept this damaged product back?,Returns,return_eligibility
+48,Does this order qualify for a return?,Returns,return_eligibility
+49,I want a different size.,Returns,exchange_request
+50,Can I exchange my item?,Returns,exchange_request
+51,I need to replace this with another size.,Returns,exchange_request
+52,How do I swap this product?,Returns,exchange_request
+53,Can I change the color?,Returns,exchange_request
+54,I want another variant.,Returns,exchange_request
+55,Can I get an exchange instead of a refund?,Returns,exchange_request
+56,"The size is wrong, how can I exchange it?",Returns,exchange_request
+57,When will the return be collected?,Returns,return_pickup
+58,Schedule my return pickup.,Returns,return_pickup
+59,The return courier never came.,Returns,return_pickup
+60,Can I change the pickup date?,Returns,return_pickup
+61,Where can I see my return pickup status?,Returns,return_pickup
+62,What should I do before the return pickup?,Returns,return_pickup
+63,My return collection is delayed.,Returns,return_pickup
+64,When is the pickup for my return?,Returns,return_pickup
+65,My card payment failed.,Payment Issues,payment_failed
+66,The payment did not go through.,Payment Issues,payment_failed
+67,Why was my checkout payment declined?,Payment Issues,payment_failed
+68,UPI failed while paying.,Payment Issues,payment_failed
+69,I cannot complete the payment.,Payment Issues,payment_failed
+70,Payment unsuccessful at checkout.,Payment Issues,payment_failed
+71,The gateway rejected my transaction.,Payment Issues,payment_failed
+72,I got a payment failure message.,Payment Issues,payment_failed
+73,My payment is pending.,Payment Issues,payment_pending
+74,Why is my transaction still processing?,Payment Issues,payment_pending
+75,UPI payment has not completed.,Payment Issues,payment_pending
+76,Card payment is stuck on pending.,Payment Issues,payment_pending
+77,Should I wait for the payment?,Payment Issues,payment_pending
+78,The payment status has not changed.,Payment Issues,payment_pending
+79,My transaction is still pending.,Payment Issues,payment_pending
+80,Why is checkout payment taking so long?,Payment Issues,payment_pending
+81,Money was deducted but my order was not created.,Payment Issues,charged_order_failed
+82,I was charged and checkout failed.,Payment Issues,charged_order_failed
+83,Payment was taken but no order number came.,Payment Issues,charged_order_failed
+84,My bank account was debited but there is no order.,Payment Issues,charged_order_failed
+85,I paid but the order disappeared.,Payment Issues,charged_order_failed
+86,I got charged without an order confirmation.,Payment Issues,charged_order_failed
+87,The money is gone but the purchase failed.,Payment Issues,charged_order_failed
+88,"Payment deducted, order missing.",Payment Issues,charged_order_failed
+89,What can I use to pay?,Payment Issues,payment_methods
+90,Do you accept UPI?,Payment Issues,payment_methods
+91,Can I pay by card?,Payment Issues,payment_methods
+92,Is net banking supported?,Payment Issues,payment_methods
+93,Is COD available?,Payment Issues,payment_methods
+94,What payment options are there?,Payment Issues,payment_methods
+95,Can I use a wallet?,Payment Issues,payment_methods
+96,Why is my preferred payment method unavailable?,Payment Issues,payment_methods
+97,Where does the refund go?,Refunds,refund_status
+98,Which account receives my refund?,Refunds,refund_status
+99,How will my refund be paid?,Refunds,refund_status
+100,Will the refund come to my original payment method?,Refunds,refund_status
+101,Where will my returned money be credited?,Refunds,refund_status
+102,How do I know the refund destination?,Refunds,refund_status
+103,Where is my refund being sent?,Refunds,refund_status
+104,Which payment method gets the refund?,Refunds,refund_status
+105,My refund is still pending.,Refunds,refund_pending
+106,Why is my refund processing?,Refunds,refund_pending
+107,The refund has not completed yet.,Refunds,refund_pending
+108,Refund status says processing.,Refunds,refund_pending
+109,How long will the pending refund stay?,Refunds,refund_pending
+110,Can you check my refund status?,Refunds,refund_pending
+111,My refund was initiated but is not complete.,Refunds,refund_pending
+112,The refund is taking too long.,Refunds,refund_pending
+113,My refund has not arrived.,Refunds,refund_not_received
+114,Refund says complete but I see no money.,Refunds,refund_not_received
+115,Where is my refunded amount?,Refunds,refund_not_received
+116,I was told I was refunded but nothing is credited.,Refunds,refund_not_received
+117,The refund is missing from my account.,Refunds,refund_not_received
+118,Refunded but balance has not changed.,Refunds,refund_not_received
+119,The refund was processed but I did not receive it.,Refunds,refund_not_received
+120,Why is the completed refund not visible?,Refunds,refund_not_received
+121,When will the refund reach me?,Refunds,refund_timeline
+122,How many days does a refund take?,Refunds,refund_timeline
+123,What is the refund ETA?,Refunds,refund_timeline
+124,How long after a return do I get the money?,Refunds,refund_timeline
+125,Will I get the refund immediately?,Refunds,refund_timeline
+126,What is the refund processing time?,Refunds,refund_timeline
+127,When should I expect my refund?,Refunds,refund_timeline
+128,How soon will the refund appear?,Refunds,refund_timeline

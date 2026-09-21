@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopAssist — Semantic Search Support Chatbot</title>
+<style>
+    body { font-family: Arial, sans-serif; background:#f5f7fb; margin:0; }
+    .wrap { max-width: 900px; margin:40px auto; padding:20px; }
+    .card { background:white; border-radius:16px; padding:24px; box-shadow:0 8px 25px rgba(0,0,0,.08); }
+    h1 { margin-top:0; }
+    .sub { color:#666; }
+    textarea { width:100%; min-height:100px; box-sizing:border-box; padding:14px; border-radius:10px; border:1px solid #ccc; font-size:16px; }
+    button { margin-top:12px; padding:12px 20px; border:0; border-radius:10px; cursor:pointer; font-weight:700; }
+    .answer { margin-top:20px; padding:16px; background:#f2f7ff; border-radius:10px; }
+    .meta { margin-top:12px; color:#555; }
+    .result { margin-top:10px; padding:10px; border-left:4px solid #888; background:#fafafa; }
+    .chips span { display:inline-block; background:#eee; padding:6px 10px; border-radius:99px; margin:4px; font-size:13px; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>ShopAssist</h1>
+    <p class="sub">Semantic-search e-commerce support chatbot</p>
+
+    <div class="chips">
+      <span onclick="setQ('Where is my order?')">Track order</span>
+      <span onclick="setQ('I want to return my product.')">Return product</span>
+      <span onclick="setQ('My payment was unsuccessful.')">Payment failed</span>
+      <span onclick="setQ('Where will I get my refund back?')">Refund</span>
+      <span onclick="setQ('Money was deducted but my order was not placed.')">Charged, no order</span>
+    </div>
+
+    <textarea id="query" placeholder="Type a customer question..."></textarea>
+    <button onclick="ask()">Ask ShopAssist</button>
+
+    <div id="output"></div>
+  </div>
+</div>
+
+<script>
+function setQ(q) { document.getElementById('query').value = q; }
+
+async function ask() {
+  const q = document.getElementById('query').value.trim();
+  const out = document.getElementById('output');
+  if (!q) return;
+
+  out.innerHTML = '<div class="answer">Searching the support knowledge base...</div>';
+
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({query:q})
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    out.innerHTML = '<div class="answer">Error: ' + (data.error || 'Unknown error') + '</div>';
+    return;
+  }
+
+  let html = `
+    <div class="answer">
+      <strong>Answer</strong><br><br>${data.answer}
+      <div class="meta"><b>Detected category:</b> ${data.category}</div>
+      <div class="meta"><b>Rewritten query:</b> ${data.rewritten_query}</div>
+      <div class="meta"><b>Important information:</b> ${data.important_information || '—'}</div>
+    </div>
+    <h3>Top retrieved knowledge</h3>
+  `;
+
+  for (const r of data.top_results) {
+    html += `
+      <div class="result">
+        <b>${r.rank}. ${r.intent}</b><br>
+        ${r.text}<br>
+        <small>Vector score: ${r.vector_score} | Re-rank score: ${r.rerank_score}</small>
+      </div>
+    `;
+  }
+
+  out.innerHTML = html;
+}
+</script>
+</body>
+</html>
