@@ -3,87 +3,529 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ShopAssist — Semantic Search Support Chatbot</title>
+<title>ShopAssist — E-commerce Support Chatbot</title>
 <style>
-    body { font-family: Arial, sans-serif; background:#f5f7fb; margin:0; }
-    .wrap { max-width: 900px; margin:40px auto; padding:20px; }
-    .card { background:white; border-radius:16px; padding:24px; box-shadow:0 8px 25px rgba(0,0,0,.08); }
-    h1 { margin-top:0; }
-    .sub { color:#666; }
-    textarea { width:100%; min-height:100px; box-sizing:border-box; padding:14px; border-radius:10px; border:1px solid #ccc; font-size:16px; }
-    button { margin-top:12px; padding:12px 20px; border:0; border-radius:10px; cursor:pointer; font-weight:700; }
-    .answer { margin-top:20px; padding:16px; background:#f2f7ff; border-radius:10px; }
-    .meta { margin-top:12px; color:#555; }
-    .result { margin-top:10px; padding:10px; border-left:4px solid #888; background:#fafafa; }
-    .chips span { display:inline-block; background:#eee; padding:6px 10px; border-radius:99px; margin:4px; font-size:13px; cursor:pointer; }
+  * { box-sizing: border-box; }
+
+  :root {
+    --blue: #1565f9;
+    --blue-dark: #0d56e8;
+    --page: #e9eef6;
+    --chat-bg: #f6f8fc;
+    --text: #172033;
+    --muted: #7b8597;
+    --border: #e2e7ef;
+    --white: #ffffff;
+    --user: #1768f9;
+    --bot: #ffffff;
+    --shadow: 0 22px 55px rgba(22, 38, 70, 0.16);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(21,101,249,.12), transparent 32%),
+      radial-gradient(circle at 85% 85%, rgba(21,101,249,.08), transparent 30%),
+      var(--page);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text);
+    padding: 28px;
+  }
+
+  .phone {
+    width: min(440px, 100%);
+    height: min(820px, calc(100vh - 56px));
+    min-height: 620px;
+    background: var(--chat-bg);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,.9);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    height: 84px;
+    flex: 0 0 84px;
+    background: linear-gradient(180deg, #1160f7 0%, #0d5af0 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+
+  .back {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: white;
+    display: grid;
+    place-items: center;
+    color: var(--blue);
+    font-size: 23px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.12);
+  }
+
+  .title-wrap { flex: 1; min-width: 0; }
+  .title { font-size: 16px; font-weight: 700; line-height: 1.15; }
+  .status { margin-top: 4px; font-size: 12px; opacity: .9; display: flex; align-items: center; gap: 6px; }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #7dff96; display: inline-block; }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-btn {
+    border: 0;
+    background: transparent;
+    color: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: .95;
+  }
+
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 14px 16px;
+    scroll-behavior: smooth;
+  }
+
+  .date-divider {
+    text-align: center;
+    color: #9aa3b2;
+    font-size: 11px;
+    margin: 4px 0 16px;
+  }
+
+  .msg-row {
+    display: flex;
+    margin: 9px 0;
+    gap: 8px;
+  }
+
+  .msg-row.user { justify-content: flex-end; }
+  .msg-row.bot { justify-content: flex-start; }
+
+  .bot-mini {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border-radius: 50%;
+    background: white;
+    display: grid;
+    place-items: center;
+    color: var(--blue);
+    box-shadow: 0 2px 7px rgba(0,0,0,.10);
+    font-size: 14px;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  .bubble {
+    max-width: 82%;
+    padding: 11px 13px;
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: break-word;
+  }
+
+  .bubble.bot {
+    background: var(--bot);
+    border: 1px solid #edf0f5;
+    border-radius: 4px 14px 14px 14px;
+    box-shadow: 0 2px 8px rgba(28,42,68,.06);
+  }
+
+  .bubble.user {
+    background: var(--user);
+    color: white;
+    border-radius: 14px 4px 14px 14px;
+    box-shadow: 0 3px 8px rgba(21,101,249,.18);
+  }
+
+  .bot-name {
+    font-size: 11px;
+    color: #8b95a6;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  .bot-meta {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 9px;
+  }
+
+  .meta-pill {
+    font-size: 10px;
+    color: #667085;
+    background: #f1f4f8;
+    border-radius: 999px;
+    padding: 4px 7px;
+  }
+
+  .quick-wrap {
+    padding: 4px 2px 8px 36px;
+  }
+
+  .quick-title {
+    color: #8791a2;
+    font-size: 11px;
+    margin-bottom: 7px;
+  }
+
+  .quick-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .quick {
+    border: 1px solid #cfd8e6;
+    background: white;
+    color: #445066;
+    border-radius: 999px;
+    padding: 8px 11px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .15s ease;
+  }
+
+  .quick:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+
+  .typing {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .typing .dots {
+    background: white;
+    border: 1px solid #edf0f5;
+    border-radius: 4px 14px 14px 14px;
+    padding: 11px 13px;
+    box-shadow: 0 2px 8px rgba(28,42,68,.06);
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: #a7b0bf;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: blink 1.1s infinite;
+  }
+  .dot:nth-child(2) { animation-delay: .15s; }
+  .dot:nth-child(3) { animation-delay: .3s; margin-right: 0; }
+  @keyframes blink { 0%, 70%, 100% { opacity:.25; } 35% { opacity:1; } }
+
+  .details {
+    margin-top: 8px;
+    border-top: 1px solid #edf0f5;
+    padding-top: 8px;
+  }
+  .details summary {
+    cursor: pointer;
+    color: #7a8597;
+    font-size: 10px;
+    user-select: none;
+  }
+  .details-body { margin-top: 7px; font-size: 10px; color: #667085; line-height: 1.5; }
+  .result-line { margin: 5px 0; padding: 6px 7px; border-radius: 7px; background: #f7f8fb; }
+
+  .composer {
+    border-top: 1px solid var(--border);
+    background: rgba(255,255,255,.96);
+    padding: 10px 11px 12px;
+  }
+
+  .input-shell {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    border: 1px solid #dbe2ec;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 7px 7px 7px 12px;
+  }
+
+  textarea {
+    flex: 1;
+    min-height: 24px;
+    max-height: 90px;
+    resize: none;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  textarea::placeholder { color: #9aa3b2; }
+
+  .send {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    transition: .15s ease;
+  }
+  .send:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .send:disabled { opacity: .45; cursor: default; transform: none; }
+
+  .footer-note {
+    text-align: center;
+    color: #a0a8b7;
+    font-size: 9px;
+    margin-top: 7px;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 0; background: var(--chat-bg); }
+    .phone {
+      width: 100%;
+      height: 100vh;
+      min-height: 100vh;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .bubble { max-width: 84%; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="card">
-    <h1>ShopAssist</h1>
-    <p class="sub">Semantic-search e-commerce support chatbot</p>
+  <main class="phone">
+    <header class="header">
+      <button class="back" aria-label="Back">‹</button>
+      <div class="avatar" aria-hidden="true">🤖</div>
+      <div class="title-wrap">
+        <div class="title">ShopAssist</div>
+        <div class="status"><span class="status-dot"></span> Online · E-commerce support</div>
+      </div>
+      <div class="header-actions">
+        <button class="header-btn" aria-label="More options">⋮</button>
+        <button class="header-btn" aria-label="Close" onclick="window.scrollTo(0,0)">×</button>
+      </div>
+    </header>
 
-    <div class="chips">
-      <span onclick="setQ('Where is my order?')">Track order</span>
-      <span onclick="setQ('I want to return my product.')">Return product</span>
-      <span onclick="setQ('My payment was unsuccessful.')">Payment failed</span>
-      <span onclick="setQ('Where will I get my refund back?')">Refund</span>
-      <span onclick="setQ('Money was deducted but my order was not placed.')">Charged, no order</span>
-    </div>
+    <section id="messages" class="messages" aria-live="polite">
+      <div class="date-divider">Today</div>
 
-    <textarea id="query" placeholder="Type a customer question..."></textarea>
-    <button onclick="ask()">Ask ShopAssist</button>
+      <div class="msg-row bot">
+        <div class="bot-mini">🤖</div>
+        <div class="bubble bot">
+          <div class="bot-name">ShopAssist</div>
+          Hi! 👋 I'm ShopAssist. How can I help you with your order today?
+        </div>
+      </div>
 
-    <div id="output"></div>
-  </div>
-</div>
+      <div class="msg-row bot">
+        <div class="bot-mini">🤖</div>
+        <div class="bubble bot">
+          You can ask me about order tracking, returns, payment problems, refunds, or a payment that was charged without an order.
+        </div>
+      </div>
+
+      <div class="quick-wrap">
+        <div class="quick-title">Quick actions</div>
+        <div class="quick-list">
+          <button class="quick" data-q="Where is my order?">Track order</button>
+          <button class="quick" data-q="I want to return my product.">Return product</button>
+          <button class="quick" data-q="My payment was unsuccessful.">Payment failed</button>
+          <button class="quick" data-q="Where will I get my refund back?">Refund</button>
+          <button class="quick" data-q="Money was deducted but my order was not placed.">Charged, no order</button>
+        </div>
+      </div>
+
+      <div id="typing" class="typing">
+        <div class="bot-mini">🤖</div>
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      </div>
+    </section>
+
+    <footer class="composer">
+      <div class="input-shell">
+        <textarea id="query" rows="1" placeholder="Type your message..." aria-label="Message"></textarea>
+        <button id="sendBtn" class="send" aria-label="Send message">➤</button>
+      </div>
+      <div class="footer-note">ShopAssist uses semantic search to find the most relevant support answer.</div>
+    </footer>
+  </main>
 
 <script>
-function setQ(q) { document.getElementById('query').value = q; }
+  const messages = document.getElementById('messages');
+  const queryInput = document.getElementById('query');
+  const sendBtn = document.getElementById('sendBtn');
+  const typing = document.getElementById('typing');
 
-async function ask() {
-  const q = document.getElementById('query').value.trim();
-  const out = document.getElementById('output');
-  if (!q) return;
-
-  out.innerHTML = '<div class="answer">Searching the support knowledge base...</div>';
-
-  const res = await fetch('/api/chat', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({query:q})
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    out.innerHTML = '<div class="answer">Error: ' + (data.error || 'Unknown error') + '</div>';
-    return;
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 
-  let html = `
-    <div class="answer">
-      <strong>Answer</strong><br><br>${data.answer}
-      <div class="meta"><b>Detected category:</b> ${data.category}</div>
-      <div class="meta"><b>Rewritten query:</b> ${data.rewritten_query}</div>
-      <div class="meta"><b>Important information:</b> ${data.important_information || '—'}</div>
-    </div>
-    <h3>Top retrieved knowledge</h3>
-  `;
+  function addUserMessage(text) {
+    const row = document.createElement('div');
+    row.className = 'msg-row user';
+    row.innerHTML = `<div class="bubble user">${escapeHtml(text)}</div>`;
+    messages.insertBefore(row, typing);
+    scrollToBottom();
+  }
 
-  for (const r of data.top_results) {
-    html += `
-      <div class="result">
-        <b>${r.rank}. ${r.intent}</b><br>
-        ${r.text}<br>
-        <small>Vector score: ${r.vector_score} | Re-rank score: ${r.rerank_score}</small>
+  function addBotMessage(data) {
+    const topResults = Array.isArray(data.top_results) ? data.top_results : [];
+    const topHtml = topResults.map(r => `
+      <div class="result-line">
+        <strong>${escapeHtml(r.rank)}. ${escapeHtml(r.intent)}</strong><br>
+        ${escapeHtml(r.text)}<br>
+        <span>Vector: ${escapeHtml(r.vector_score)} · Re-rank: ${escapeHtml(r.rerank_score)}</span>
+      </div>
+    `).join('');
+
+    const detailsHtml = topResults.length ? `
+      <details class="details">
+        <summary>View search details</summary>
+        <div class="details-body">
+          <div><strong>Detected category:</strong> ${escapeHtml(data.category)}</div>
+          <div><strong>Rewritten query:</strong> ${escapeHtml(data.rewritten_query)}</div>
+          <div><strong>Important information:</strong> ${escapeHtml(data.important_information || '—')}</div>
+          ${topHtml}
+        </div>
+      </details>
+    ` : '';
+
+    const row = document.createElement('div');
+    row.className = 'msg-row bot';
+    row.innerHTML = `
+      <div class="bot-mini">🤖</div>
+      <div class="bubble bot">
+        <div class="bot-name">ShopAssist</div>
+        ${escapeHtml(data.answer || 'I could not find a relevant support answer.')}
+        ${data.category ? `<div class="bot-meta"><span class="meta-pill">${escapeHtml(data.category)}</span></div>` : ''}
+        ${detailsHtml}
       </div>
     `;
+    messages.insertBefore(row, typing);
+    scrollToBottom();
   }
 
-  out.innerHTML = html;
-}
+  function addErrorMessage(text) {
+    const row = document.createElement('div');
+    row.className = 'msg-row bot';
+    row.innerHTML = `
+      <div class="bot-mini">🤖</div>
+      <div class="bubble bot">
+        <div class="bot-name">ShopAssist</div>
+        Sorry, I couldn't process that request right now.<br><br>${escapeHtml(text)}
+      </div>
+    `;
+    messages.insertBefore(row, typing);
+    scrollToBottom();
+  }
+
+  function scrollToBottom() {
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function showTyping(show) {
+    typing.style.display = show ? 'flex' : 'none';
+    if (show) scrollToBottom();
+  }
+
+  async function ask(q = null) {
+    const text = (q ?? queryInput.value).trim();
+    if (!text || sendBtn.disabled) return;
+
+    addUserMessage(text);
+    queryInput.value = '';
+    autoResize();
+    showTyping(true);
+    sendBtn.disabled = true;
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: text })
+      });
+
+      const data = await res.json();
+
+      showTyping(false);
+      if (!res.ok) {
+        addErrorMessage(data.error || 'Unknown error.');
+        return;
+      }
+
+      addBotMessage(data);
+    } catch (error) {
+      showTyping(false);
+      addErrorMessage('Please check your connection and try again.');
+    } finally {
+      sendBtn.disabled = false;
+      queryInput.focus();
+    }
+  }
+
+  function autoResize() {
+    queryInput.style.height = 'auto';
+    queryInput.style.height = Math.min(queryInput.scrollHeight, 90) + 'px';
+  }
+
+  sendBtn.addEventListener('click', () => ask());
+
+  queryInput.addEventListener('input', autoResize);
+  queryInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      ask();
+    }
+  });
+
+  document.querySelectorAll('.quick').forEach(button => {
+    button.addEventListener('click', () => ask(button.dataset.q));
+  });
+
+  autoResize();
+  scrollToBottom();
 </script>
 </body>
 </html>
